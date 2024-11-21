@@ -1,0 +1,9 @@
+{
+  "label": "Wallxet Integration",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": " ALl Wallet Integration"
+  },
+  "sidebar_position": 2
+}

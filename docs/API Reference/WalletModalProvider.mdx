@@ -1,0 +1,25 @@
+---
+sidebar_position: 3
+---
+
+# WalletModalProvider
+
+### What is WalletModalProvider
+WalletModalProvider is a React component that enables a modal window for users to easily connect their wallets. By wrapping your application in this provider, it triggers a connection modal whenever a user needs to connect their wallet. This makes it simpler to integrate wallet connection features into your app without having to manage the modal logic manually.
+
+### Props:
+- children (ReactNode): These are the nested components that will have access to the wallet modal functionality. This prop allows you to render your app's UI while enabling wallet connection features globally.
+**Example in layout.tsx:**
+```tsx
+import {  ReactNode } from "react";
+import { WalletModalProvider } from '@solana/wallet-adapter-react';
+
+export default function RootLayout({ children }: { children: ReactNode }) {
+
+  return (
+ <WalletModalProvider>{children}</WalletModalProvider>
+  );
+}
+
+
+```

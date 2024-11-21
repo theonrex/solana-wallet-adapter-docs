@@ -1,0 +1,116 @@
+---
+sidebar_position: 2
+---
+
+# WalletProvider
+
+## What is WalletProvider?
+WalletProvider is a React context provider that handles wallet connectivity for your Solana application. It allows users to connect their wallets (e.g., Phantom, Solflare) and facilitates wallet-related operations like signing transactions or viewing balances.
+
+### Props:
+
+
+### wallets (Array):
+An array of wallet adapters that your application supports. Wallet adapters are small code packages that bridge your app with specific wallets.
+
+For example, to support the Phantom Wallet, you use the **PhantomWalletAdapter**. You can add more adapters depending on the wallets you want to support, such as:
+
+- SolflareWalletAdapter
+- TorusWalletAdapter
+
+### autoConnect (boolean):
+A flag indicating whether the application should automatically reconnect to the last wallet used when the page reloads. This improves user experience by reducing friction.
+
+- true: Automatically reconnect to the last wallet used.
+- false: Require users to manually reconnect their wallet.
+
+### children (ReactNode):
+These are the components that require wallet context. Any component wrapped inside WalletProvider gains access to the wallet connection state and functionality.
+
+
+
+### **Example in layout.tsx:**
+```tsx
+
+import { WalletProvider } from '@solana/wallet-adapter-react';
+import { PhantomWalletAdapter, TorusWalletAdapter , LedgerWalletAdapter} from '@solana/wallet-adapter-wallets';
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const wallets = [
+    new PhantomWalletAdapter(),
+    new TorusWalletAdapter(),
+    new LedgerWalletAdapter(),
+  ];
+
+  return (
+    <WalletProvider wallets={wallets} autoConnect>
+      {children}
+    </WalletProvider>
+  );
+}
+
+
+```
+
+### Imports for Wallet Adapters
+To use specific wallets in your Solana application, you directly import them as needed. Below is an organized way to import popular wallets based on their purpose or type.
+
+### Popular Wallet Adapters
+These are widely used wallets in the Solana ecosystem, known for ease of use and broad support.
+
+
+```tsx
+
+import { PhantomWalletAdapter } from '@solana/wallet-adapter-wallets'; // Phantom Wallet  
+import { SolflareWalletAdapter } from '@solana/wallet-adapter-wallets'; // Solflare Wallet  
+import { TorusWalletAdapter } from '@solana/wallet-adapter-wallets';   // Torus Wallet  
+
+
+```
+
+### Exchange-Related Wallets
+
+These wallet adapters are from well-known crypto exchanges, often used for bridging across different blockchains or accessing exchange features.
+
+
+``` tsx
+import { CoinbaseWalletAdapter } from '@solana/wallet-adapter-coinbase';  // Coinbase Wallet: A popular exchange-integrated wallet with a simple interface for managing crypto assets.
+import { CoinhubWalletAdapter } from '@solana/wallet-adapter-coinhub';    // Coinhub Wallet: A wallet with multi-chain support and integration with the Coinhub exchange.
+import { HuobiWalletAdapter } from '@solana/wallet-adapter-huobi';        // Huobi Wallet: Wallet for accessing assets on Huobi Exchange with support for multiple blockchains.
+import { KrystalWalletAdapter } from '@solana/wallet-adapter-krystal';    // Krystal Wallet: A multi-chain wallet supporting both centralized and decentralized finance.
+
+```
+
+### Hardware Wallets
+Hardware wallets are physical devices used to store cryptocurrency keys securely, minimizing the risk of online attacks.
+
+```tsx
+import { LedgerWalletAdapter } from '@solana/wallet-adapter-ledger';     // Ledger Wallet: A hardware wallet providing secure private key storage for crypto assets.
+import { TrezorWalletAdapter } from '@solana/wallet-adapter-trezor';     // Trezor Wallet: A widely-used hardware wallet offering multi-currency support and advanced security.
+import { KeystoneWalletAdapter } from '@solana/wallet-adapter-keystone';   // Keystone Wallet: A hardware wallet with a focus on secure storage and privacy for crypto assets.
+
+
+```
+
+### Multi-Chain Wallets
+These wallets are designed to support multiple blockchain networks, making them flexible for cross-chain transactions.
+
+```tsx
+import { Coin98WalletAdapter } from '@solana/wallet-adapter-coin98';    // Coin98 Wallet: A wallet supporting multiple blockchains, including Solana, Ethereum, and more.
+import { WalletConnectAdapter } from '@solana/wallet-adapter-walletconnect'; // WalletConnect: A protocol that connects various mobile wallets to dApps across different blockchains.
+import { TokenPocketWalletAdapter } from '@solana/wallet-adapter-tokenpocket';  // TokenPocket Wallet: Multi-chain wallet offering integration with Solana, Ethereum, and other blockchains.
+import { XdefiWalletAdapter } from '@solana/wallet-adapter-xdefi';      // XDEFI Wallet: A multi-chain wallet that supports decentralized finance (DeFi) platforms.
+
+```
+
+### Solana-Specific Wallets
+These wallets are specifically built for the Solana ecosystem.
+
+```tsx
+import { PhantomWalletAdapter } from '@solana/wallet-adapter-phantom';    // Phantom Wallet: A user-friendly Solana wallet for interacting with decentralized apps (dApps) on the Solana blockchain.
+import { SolflareWalletAdapter } from '@solana/wallet-adapter-solflare';   // Solflare Wallet: A Solana-focused wallet supporting native token storage, staking, and dApp interaction.
+import { SolongWalletAdapter } from '@solana/wallet-adapter-solong';     // Solong Wallet: A lightweight Solana wallet that allows users to easily manage tokens and interact with dApps.
+import { SpotWalletAdapter } from '@solana/wallet-adapter-spot';       // Spot Wallet: A Solana wallet designed for easy access to your Solana tokens and decentralized applications.
+import { AvanaWalletAdapter } from '@solana/wallet-adapter-avana';        // Avana Wallet: A Solana-specific wallet designed for smooth interaction with Solana-based dApps.
+
+```
