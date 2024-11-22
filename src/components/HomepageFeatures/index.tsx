@@ -1,51 +1,51 @@
-import clsx from 'clsx';
-import Heading from '@theme/Heading';
-import styles from './styles.module.css';
+import clsx from "clsx";
+import Heading from "@theme/Heading";
+import styles from "./styles.module.css";
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  img: string;
   description: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: "Enhanced Functionality:",
+    img: "https://img.icons8.com/arcade/512/code.png",
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Built on top of the Solana Wallet Adapter to provide a more refined,
+        feature-rich experience.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: "Open-Source:",
+    img: "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/512/external-open-source-mobile-app-development-flaticons-lineal-color-flat-icons.png",
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Community-driven and free for anyone to use, modify, and contribute to.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: "Improved Documentation",
+    img: "https://img.icons8.com/external-flaticons-flat-flat-icons/512/external-documentation-agile-flaticons-flat-flat-icons.png",
+
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Easy-to-follow documentation with clear examples to help you integrate
+        wallet support in no time.
       </>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({ title, img, description }: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={`col col--4  ${styles.feature_div}`}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <img src={img} alt="" />
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
@@ -59,6 +59,7 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
+        <h2>Why SolanaWalletAdapter+</h2>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />

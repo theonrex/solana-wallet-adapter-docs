@@ -1,8 +1,4 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Space+Grotesk:wght@300..700&display=swap');
 
 /* You can override the default Infima variables here. */
 :root {
@@ -30,6 +26,70 @@
 }
 
 .menu__link--active {
-  color: #ffab03;
-  background-color: #1a8870;
+  color: #9945FF;
+  background-color: #9945FF;
+}
+
+body {
+  font-family: "Space Grotesk", serif !important;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div,
+span,
+ul,
+li,
+footer {
+  font-family: "Space Grotesk", serif !important;
+
+}
+
+.footer {
+  background-color: rgb(23, 23, 23) !important;
+  margin-top: 2em;
+}
+
+.footer__items li {
+  margin-bottom: 1em !important;
+}
+
+.footer__copyright {
+  margin: 2em 0;
+}
+
+.docusaurus-mt-l {
+  background-color: none !important;
+}
+
+@media screen and (max-width:996px) {
+
+  .navbar__items {
+
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+    /* max-width: 500px; */
+  }
+
+  .navbar {
+    width: 100%;
+  }
+
+  .navbar__inner {
+    display: unset;
+    /* justify-content: space-between; */
+    width: 100%;
+    /* align-items: flex-start; */
+    /* flex-direction: row-reverse; */
+  }
 }

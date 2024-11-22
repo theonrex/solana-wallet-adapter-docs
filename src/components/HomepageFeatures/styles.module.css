@@ -9,3 +9,22 @@
   height: 200px;
   width: 200px;
 }
+
+.features h2 {
+  font-size: 2em;
+  text-align: center;
+  background: #14F195;
+  background: linear-gradient(to right, #14F195 0%, #9945FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.feature_div {
+
+  margin-top: 3em;
+
+}
+
+.feature_div img {
+  width: 150px !important;
+}
