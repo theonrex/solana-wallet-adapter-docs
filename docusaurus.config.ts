@@ -116,14 +116,16 @@ const config: Config = {
             //   label: "Blogs",
             //   to: "/blog",
             // },
-            // {
-            //   label: "GitHub",
-            //   href: "https://github.com/facebook/docusaurus",
-            // },
+            {
+              label: "Demo",
+              href: "https://codesandbox.io/p/devbox/hkrsfs?embed=1",
+            },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} SolanaWalletAdapter+. All rights reserved`,
+      copyright: ` ${new Date().getFullYear()} Made with ❤️ by <a href="https://x.com/olawande0x" target="_blank" rel="noopener noreferrer">olawande0x</a>.
+
+      `,
     },
     prism: {
       theme: prismThemes.github,

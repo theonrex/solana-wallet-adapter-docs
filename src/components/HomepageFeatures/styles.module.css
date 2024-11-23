@@ -20,11 +20,47 @@
 }
 
 .feature_div {
-
+  text-align: center;
   margin-top: 3em;
 
 }
 
+
+
 .feature_div img {
   width: 150px !important;
+}
+
+@media screen and (max-width: 1000px) {
+  .feature_div p {
+    width: 60%;
+  }
+
+  .feature_div div:last-child {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .feature_div p {
+    width: 90%;
+  }
+
+  .feature_div div:last-child {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .features h2 {
+    font-size: 1.9em;
+  }
+
+  .feature_div {
+    margin-top: 0.3em;
+  }
 }

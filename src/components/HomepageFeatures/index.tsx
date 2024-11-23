@@ -59,7 +59,7 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
-        <h2>Why SolanaWalletAdapter+</h2>
+        <h2>Why Solana Wallet Adapter+</h2>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />

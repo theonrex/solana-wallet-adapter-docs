@@ -7,7 +7,7 @@
 }
 
 .HomepageWallets_row {
-  width: 70%;
+  width: 80%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -16,9 +16,33 @@
 }
 
 .WalletItem img {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   object-fit: cover;
-  margin: 2em;
+  margin: 1.2em;
   border-radius: 50%;
+}
+
+@media screen and (max-width: 900px) {
+  .HomepageWallets_row {
+    width: 80%;
+
+  }
+
+  .WalletItem img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    margin: 1em;
+  
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+  .HomepageWallets_row {
+    width: 100%;
+
+  }
+
 }

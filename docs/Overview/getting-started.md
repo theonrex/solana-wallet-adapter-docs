@@ -51,7 +51,6 @@ export const useWalletConnection = () => useContext(WalletContext);
 2. Wrap your main App component with the WalletConnectionProvider in your pages **layout.tsx**:
 
 ```tsx
-import "./globals.css";
 import { WalletConnectionProvider } from "./WalletConnectionProvider";
 
 export default function RootLayout({
@@ -70,16 +69,16 @@ export default function RootLayout({
 }
 ```
 
-3. Usage Example
+### Usage Example
 
 Here's a simple example of how to use the wallet adapter in a Next.js component:
 
 ```tsx
-import { FC } from "react";
+import React from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
-const WalletConnection: FC = () => {
+const WalletConnection = () => {
   const { publicKey } = useWallet();
 
   return (

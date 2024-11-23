@@ -12,7 +12,7 @@ function HomepageHeader() {
     <header className={styles.heroBanner}>
       <div className="container">
         <Heading as="h1" className={styles.hero__title}>
-          {siteConfig.title}
+          Solana Wallet Adapter+{" "}
         </Heading>
         <p className={styles.hero__subtitle}>{siteConfig.tagline}</p>
         <div className={styles.buttons}>
