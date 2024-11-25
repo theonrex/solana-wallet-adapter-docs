@@ -48,7 +48,7 @@ export const WalletConnectionProvider = ({
 export const useWalletConnection = () => useContext(WalletContext);
 ```
 
-2. Wrap your main App component with the WalletConnectionProvider in your pages **layout.tsx**:
+2. Wrap your main App component with the WalletConnectionProvider in **layout.tsx**:
 
 ```tsx
 import { WalletConnectionProvider } from "./WalletConnectionProvider";
