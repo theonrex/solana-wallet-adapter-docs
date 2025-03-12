@@ -39,7 +39,3 @@ We welcome contributions from all developers regardless of experience level. If 
 ## Additional Resources
 
 - [Official Repo](https://github.com/anza-xyz/wallet-adapter)
-
-## Support
-
-For help or feedback, please [visit our support site](https://thirdweb.com/support)
